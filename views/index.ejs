@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <link rel="shortcut icon" type="image/png" href="images/corona-11.png"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js" integrity="sha512-ZKNVEa7gi0Dz4Rq9jXcySgcPiK+5f01CqW+ZoKLLKr9VMXuCsw3RjWiv8ZpIOa0hxO79np7Ec8DDWALM0bDOaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet"/>
+    <title>Covid'19</title>
+  </head>
+  <body>
+     
+    <nav class="navbar navbar-expand-lg style-x  bg p-2">
+      <a class="navbar-brand ml-5" href="#">COVID'19</a>
+      <button class="navbar-toggler btn_nav btn btn-light dropdown-toggle" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+    
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto pr-5 text-capitalize">
+          <li class="nav-item active">
+            <a class="nav-link" href="#home">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#aboutid">about</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#symptomsid">Symptoms</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#preventionid">Preventions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contactid">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Vaccination</a>
+          </li>
+        </ul>
+    
+      </div>
+    </nav>
+
+
+    <div class="main-banner main" id="top">
+      <video autoplay muted loop id="bg-video">
+          <source src="images/Covid.mp4" type="video/mp4" />
+      </video>
+      <div class="video-overlay header-text">
+        <div class="caption">
+            <h6>Get vaccinated as soon as possible</h6>
+            <h2>Stay Home <i class="fa fa-home home_btn " style="color: #D83F87!important;" ></i> Stay Safe</h2>
+            <div class="main-button scroll-to-section">
+              <a href="https://selfregistration.cowin.gov.in/" target="_blank">Vaccinate Now</a>
+             
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div class="main_header" id="home">
+      <div class="row w-100 h-100">
+        <div class="col-lg-5 col-md-5 col-12 order-lg-1 order-2">
+          <div
+            class="
+              leftside
+              w-100
+              h-100
+              d-flex
+              justify-content-center
+              align-items-center
+            "
+          >
+            <img src="images/corona2.png" width="350" height="350" />
+          </div>
+        </div>
+        <div class="col-lg-7 col-md-7 col-12 order-lg-2 order-1">
+          <div
+            class="
+              rightside
+              w-100
+              h-100
+              d-flex
+              justify-content-center
+              align-items-center
+            "
+          >
+            <h1>
+              Let's Stay Safe & Fight Together Against Corona Virus
+              <span class="corona_animate"
+                ><img
+                  src="images/corona-1.png"
+                  alt=""
+                  width="260"
+                  height="150"
+              /></span>
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+
+    <!-- *****api  response corona updates**********-->
+    <section class="corona_update">
+      <div class="mb-3">
+        <h3 class="text-uppercase text-center">Covid'19 Updates</h3>
+      </div>
+      <div class="d-flex justify-content-around align-items-center mt-5 count_style">
+        <% result.forEach(function(i) { %>
+          <div>
+            <h1 class="count"><%= i.data %></h1>
+            <p style="font-size: 20px;"><%=i.name %></p>
+          </div>
+        <% }); %>
+        <!-- <div>
+          <h1 class="count">78494</h1> 
+          <p>Total Cases So far*</p>
+        </div>
+        <div>
+          <h1 class="count">52891</h1>
+          <p>Active Covid'19 Cases*</p>
+        </div>
+        <div>
+          <h1 class="count">5500</h1>
+          <p>Cured-Discharged Cases*</p>
+        </div>
+        <div>
+          <h1 class="count">455</h1>
+          <p>Death Cases</p>
+        </div> -->
+      </div>
+    </section>
+    <!-- about  -->
+    <div class="container-fluid sub_section pt-5 pb-5" id="aboutid">
+      <div class="section_header text-center mb-5 mt-4">
+        <h1>About COVID'19</h1>
+      </div>
+      <div class="row pt-5">
+        <div class="col-lg-5 col-md-6 col-12 ml-5 image_about mb-4">
+          <img
+            src="images/corona_image.jpg"
+            width="100%"
+            height="100%"
+           
+          />
+        </div>
+        <div class="col-lg-6 col-md-6 col-12 ml-2">
+          <h2>What is COVID-19(Corona-Virus)</h2>
+          <p>
+            Coronavirus disease (COVID-19) is an infectious disease caused by a
+            newly discovered coronavirus.
+          </p>
+          <p>
+            The best way to prevent and slow down transmission is to be well
+            informed about the COVID-19 virus. Protect yourself and others from
+            infection by washing your hands or using an alcohol based rub
+            frequently and not touching your face.
+          </p>
+          <p>
+            Most people infected with the COVID-19 virus will experience mild to
+            moderate respiratory illness and recover without requiring special
+            treatment. Older people, and those with underlying medical problems
+            like cardiovascular disease, diabetes, chronic respiratory disease,
+            and cancer are more likely to develop serious illness. The COVID-19
+            virus spreads primarily through droplets of saliva or discharge from
+            the nose when an infected person coughs or sneezes, so it’s
+            important that you also practice respiratory etiquette .
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- symptoms -->
+    <div class="container-fluid pt-5 pb-5" id="symptomsid">
+      <div class="section_header text-center mb-5 mt-4">
+        <h1>CoronaVirus - Symptoms</h1>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-12 mt-5">
+            <figure class="text-center">
+              <img
+                src="images/d1.jpg"
+                width="100%"
+                height="100%"
+                alt=""
+              />
+              <figcaption class="jk">Cough</figcaption>
+            </figure>
+          </div>
+          <div class="col-lg-4 col-md-4 col-12 mt-5">
+            <figure class="text-center">
+              <img
+                src="images/d2.jpg"
+                width="100%"
+                height="100%"
+                alt=""
+              />
+              <figcaption class="jk">Sneezing</figcaption>
+            </figure>
+          </div>
+          <div class="col-lg-4 col-md-4 col-12 mt-5">
+            <figure class="text-center">
+              <img
+                src="images/d3.jpg"
+                width="100%"
+                height="100%"
+                alt=""
+              />
+              <figcaption class="jk">Running Nose</figcaption>
+            </figure>
+          </div>
+          <div class="col-lg-4 col-md-4 col-12 mt-5">
+            <figure class="text-center">
+              <img
+                src="images/d4.jpg"
+                width="100%"
+                height="100%"
+                alt=""
+              />
+              <figcaption class="jk">Breathing problems</figcaption>
+            </figure>
+          </div>
+          <div class="col-lg-4 col-md-4 col-12 mt-5">
+            <figure class="text-center">
+              <img
+                src="images/d5.jpg"
+                width="100%"
+                height="100%"
+                alt=""
+              />
+              <figcaption class="jk">Fever</figcaption>
+            </figure>
+          </div>
+          <div class="col-lg-4 col-md-4 col-12 mt-5">
+            <figure class="text-center">
+              <img
+                src="images/d6.jpg"
+                width="100%"
+                height="100%"
+                alt=""
+              />
+              <figcaption class="jk">Tiredness</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ----preventions -->
+    <div class="container-fluid sub_section pt-5 pb-5" id="preventionid">
+      <div class="section_header text-center mb-5 mt-4">
+        <h1>6 Steps Prevention Against CoronaVirus</h1>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-12">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-12">
+                <figure class="text-center">
+                  <img
+                    src="images/p1.jpg"
+                    width="100%"
+                    height="100%"
+                    alt=""
+                    class="img-fluid bg-primary"
+                  />
+                </figure>
+              </div>
+              <div class="col-lg-8 col-md-8 col-12">
+                <p>
+                  Wash your hands regularly and properly for 20 seconds ,with
+                  soap and water or alcohol-based hand rub
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-12">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-12">
+                <figure class="text-center">
+                  <img
+                    src="images/p2.jpg"
+                    width="100%"
+                    height="100%"
+                    alt=""
+                    class="img-fluid bg-primary"
+                  />
+                </figure>
+              </div>
+              <div class="col-lg-8 col-md-8 col-12">
+                <p>
+                  Always cover your mouth and nose properly with a mask when you
+                  go outside .
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-12">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-12">
+                <figure class="text-center">
+                  <img
+                    src="images/p3.jpg"
+                    width="100%"
+                    height="100%"
+                    alt=""
+                    class="img-fluid bg-primary"
+                  />
+                </figure>
+              </div>
+              <div class="col-lg-8 col-md-8 col-12">
+                <p>
+                  Do clean everything comes from outside properly and maintain
+                  hygiene.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-12">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-12">
+                <figure class="text-center">
+                  <img
+                    src="images/p4.jpg"
+                    width="100%"
+                    height="100%"
+                    alt=""
+                    class="img-fluid bg-primary"
+                  />
+                </figure>
+              </div>
+              <div class="col-lg-8 col-md-8 col-12">
+                <p>
+                  Maintain Social Distancing(2 meter or 6 feet) with people who
+                  are unwell.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-12">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-12">
+                <figure class="text-center">
+                  <img
+                    src="images/p5.jpg"
+                    width="100%"
+                    height="100%"
+                    alt=""
+                    class="img-fluid bg-primary"
+                  />
+                </figure>
+              </div>
+              <div class="col-lg-8 col-md-8 col-12">
+                <p>
+                  Stay home and self-isolate from others in the house if you
+                  feel unwell. Avoid going outside unnecessarily.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-12">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-12">
+                <figure class="text-center">
+                  <img
+                    src="images/p6.jpg"
+                    width="100%"
+                    height="100%"
+                    alt=""
+                    class="img-fluid bg-primary"
+                  />
+                </figure>
+              </div>
+              <div class="col-lg-8 col-md-8 col-12">
+                <p>
+                  If you feel anyhing from above mentioned symptoms seek medical
+                  care early.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+       </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="container-fluid pt-5 pb-5" id="contactid">
+        <div class="section_header text-center mb-5 mt-4">
+          <h1>In Case of Emergency </h1>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-12">
+              <form>
+                <div class="form-group">
+                  <label>Username</label>
+                  <input
+                    type="text"
+                    required
+                    minlength="3"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Name"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Email address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    placeholder="name@example.com"
+                    id="email"
+                    required
+                    pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$"
+                    minlength="5"
+                    maxlength="20"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Mobile</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    required
+                    minlength="10"
+                    maxlength="10"
+                    id="exampleFormControlInput1"
+                    placeholder="Phone Number"
+                    name="mobile"
+                    autocomplete="off"
+                  />
+                </div>
+              
+                <div class="form-group">
+                  <label>Select Symptoms</label><br />
+                  <div
+                    class="
+                      custom-control custom-checkbox custom-control-inline
+                      text-capitalize
+                    "
+                  >
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customcheckbox1"
+                      name="symp[]"
+                      value="cold"
+                    />
+                    <label class="custom-control-label" for="customcheckbox1"
+                      >Cold</label
+                    >
+                  </div>
+                  <div
+                    class="
+                      custom-control custom-checkbox custom-control-inline
+                      text-capitalize
+                    "
+                  >
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customcheckbox2"
+                      name="symp[]"
+                      value="fever"
+                    />
+                    <label class="custom-control-label" for="customcheckbox2"
+                      >Fever</label
+                    >
+                  </div>
+                  <div
+                    class="
+                      custom-control custom-checkbox custom-control-inline
+                      text-capitalize
+                    "
+                  >
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customcheckbox3"
+                      name="symp[]"
+                      value="breath"
+                    />
+                    <label class="custom-control-label" for="customcheckbox3"
+                      >Difficulty in Breath</label
+                    >
+                  </div>
+                  <div
+                    class="
+                      custom-control custom-checkbox custom-control-inline
+                      text-capitalize
+                    "
+                  >
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customcheckbox4"
+                      name="symp[]"
+                      value="tired"
+                    />
+                    <label class="custom-control-label" for="customcheckbox4"
+                      >Feeling Weak</label
+                    >
+                  </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Address</label>
+                    <textarea
+                      class="form-control"
+                      id="exampleFormControlTextarea1"
+                      rows="3"
+                    ></textarea>
+                  </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- top cursor  -->
+      <div id="btn"><div ><a href="#top" >
+        <i class="fas fa-arrow-up" ></i>
+        </a>
+      </div>
+    </div>
+   
+    <footer class="mt-5">
+      <div class="footer_style text-white text-center container-fluid last-line">
+        <p>
+          <div style="font-size: 1rem;">
+            Developed with 
+            <span style="color: red;">&#10084</span> By <a href="https://github.com/codeme13">Arpit Saini</a> <br><br>
+        </div>
+        </p>
+      </div>
+    </footer>
+   <script type="text/javascript">
+  $('.count').counterUp({
+    delay:10,
+    time:3000
+  })
+  $('.btn')
+  </script>
+  </body>
+</html>
+
